@@ -162,7 +162,7 @@ const Laboratory = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
 
-      const response = await fetch('http://localhost:8000/api/scan', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/scan', {
         method: 'POST',
         headers: headers,
         body: formData,
@@ -219,7 +219,7 @@ const Laboratory = () => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
 
-      const response = await fetch('http://localhost:8000/api/gemini-diagnosis', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/gemini-diagnosis', {
         method: 'POST',
         headers: headers,
         body: formData,

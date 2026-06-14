@@ -31,10 +31,10 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const [profileRes, scansRes] = await Promise.all([
-          fetch('http://localhost:8000/api/auth/profile', {
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/profile', {
             headers: { 'Authorization': `Bearer ${token}` }
           }),
-          fetch('http://localhost:8000/api/scans/history', {
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/scans/history', {
             headers: { 'Authorization': `Bearer ${token}` }
           })
         ]);
@@ -63,7 +63,7 @@ const Dashboard = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8000/api/auth/profile', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/profile', {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const Dashboard = () => {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:8000/api/auth/avatar', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/avatar', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
