@@ -39,21 +39,23 @@ const HeroSection = () => {
               Scan Now
             </button>
 
-            <button
-              className={`${styles.uploadBtn} glass-panel`}
-              onClick={() => navigate('/laboratory')}
-            >
-              <span className="material-symbols-outlined">upload</span>
-              Upload Image
-            </button>
+            <div className={styles.secondaryActions}>
+              <button
+                className={`${styles.uploadBtn} glass-panel`}
+                onClick={() => navigate('/laboratory')}
+              >
+                <span className="material-symbols-outlined">upload</span>
+                Upload Image
+              </button>
 
-            <button
-              className={`${styles.docBtn} glass-panel`}
-              onClick={() => navigate('/knowledge')}
-            >
-              <span className="material-symbols-outlined">description</span>
-              View Docs
-            </button>
+              <button
+                className={`${styles.docBtn} glass-panel`}
+                onClick={() => navigate('/knowledge')}
+              >
+                <span className="material-symbols-outlined">description</span>
+                View Docs
+              </button>
+            </div>
           </div>
         </div>
 

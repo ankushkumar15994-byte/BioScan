@@ -111,6 +111,27 @@
 
 .scanBtn {
   gap: 8px;
+  justify-content: center;
+}
+
+.secondaryActions {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.secondaryActions > button {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .secondaryActions {
+    width: auto;
+  }
+  .secondaryActions > button {
+    flex: none;
+  }
 }
 
 .uploadDropdown {
