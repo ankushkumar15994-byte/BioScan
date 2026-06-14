@@ -1,5 +1,6 @@
 .dashboardPage {
   min-height: 100vh;
+  padding-top: 80px;
   background-color: #0a0f0d;
   color: #e2e8f0;
   font-family: 'Inter', system-ui, sans-serif;
