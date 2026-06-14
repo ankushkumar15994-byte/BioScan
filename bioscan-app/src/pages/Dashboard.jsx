@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [newOccupation, setNewOccupation] = useState('');
   const [loading, setLoading] = useState(true);
   const [isUploading, setIsUploading] = useState(false);
+  const [imgError, setImgError] = useState(false);
   const fileInputRef = useRef(null);
   
   // Interactivity states
@@ -259,8 +260,13 @@ const Dashboard = () => {
                   <div className={styles.avatarWrapper} onClick={() => fileInputRef.current?.click()}>
                     {isUploading ? (
                       <span className={styles.avatarInitials}><span className="material-symbols-outlined" style={{animation: 'spin 1s linear infinite'}}>refresh</span></span>
-                    ) : profile.avatar_url ? (
-                      <img src={profile.avatar_url} alt="Profile" className={styles.avatarImg} />
+                    ) : (profile.avatar_url && !imgError) ? (
+                      <img 
+                        src={profile.avatar_url} 
+                        alt="Profile" 
+                        className={styles.avatarImg} 
+                        onError={() => setImgError(true)}
+                      />
                     ) : (
                       <span className={styles.avatarInitials}>
                         {profile.name ? profile.name.charAt(0).toUpperCase() : 'U'}
