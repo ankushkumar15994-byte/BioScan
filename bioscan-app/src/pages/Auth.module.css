@@ -259,3 +259,11 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+@media (max-width: 480px) {
+  .authCard {
+    padding: 24px 16px;
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+}

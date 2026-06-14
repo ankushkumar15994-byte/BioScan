@@ -756,3 +756,49 @@
   color: #00ff88;
   line-height: 1.5;
 }
+
+@media (max-width: 768px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #1a2a22;
+  }
+  .navGroup {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .navItem {
+    width: auto;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+  }
+  .mainContent {
+    padding: 1rem;
+  }
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .profileRow {
+    grid-template-columns: 1fr;
+  }
+  .historySection {
+    padding: 1rem;
+  }
+  .historyActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+}
