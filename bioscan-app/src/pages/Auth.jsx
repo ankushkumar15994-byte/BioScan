@@ -26,8 +26,8 @@ const Auth = () => {
     
     try {
       const endpoint = mode === 'register' 
-        ? `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/register' 
-        : `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/login';
+        ? `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/register` 
+        : `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/login`;
       const body = mode === 'register' ? { name, email, password } : { email, password };
       
       const response = await fetch(endpoint, {
@@ -63,7 +63,7 @@ const Auth = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/google', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/auth/google`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ access_token: tokenResponse.access_token })

@@ -17,9 +17,9 @@ const Community = () => {
     const fetchCommunityData = async () => {
       try {
         const [statsRes, scansRes, contribRes] = await Promise.all([
-          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/stats'),
-          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/recent-scans'),
-          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/top-contributors')
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/stats`),
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/recent-scans`),
+          fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/community/top-contributors`)
         ]);
         
         if (statsRes.ok) {
