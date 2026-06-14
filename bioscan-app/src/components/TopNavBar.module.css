@@ -101,8 +101,43 @@
   cursor: pointer;
 }
 
+.desktopActions {
+  display: none;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(16, 21, 16, 0.95);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(59, 75, 62, 0.3);
+  padding: 16px var(--spacing-gutter);
+}
+
+.mobileLink {
+  padding: 12px 0;
+  color: var(--on-surface);
+  font-family: var(--font-label-md);
+  font-size: 16px;
+  border-bottom: 1px solid rgba(59, 75, 62, 0.1);
+  text-decoration: none;
+}
+
+.mobileActions {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 768px) {
   .mobileMenuBtn {
+    display: none;
+  }
+  .desktopActions {
+    display: flex;
+    align-items: center;
+  }
+  .mobileDropdown {
     display: none;
   }
 }
