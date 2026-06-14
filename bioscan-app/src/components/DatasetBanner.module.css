@@ -1,0 +1,155 @@
+.bannerSection {
+  padding: 96px 0;
+  background: var(--surface-container-lowest);
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(132, 149, 134, 0.1);
+  overflow: hidden;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 227, 131, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-gutter);
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: var(--font-headline-lg);
+  font-size: 32px;
+  color: var(--on-surface);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+.description {
+  font-family: var(--font-body-md);
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 32px;
+  background: rgba(28, 33, 28, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 227, 131, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 227, 131, 0.1);
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(0, 227, 131, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.cardValue {
+  font-family: var(--font-headline-lg);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-fixed-dim);
+  margin-bottom: 6px;
+}
+
+.cardLabel {
+  font-family: var(--font-label-md);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  font-family: var(--font-body-md);
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: var(--font-label-md);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ctaBtnPrimary {
+  background-color: var(--primary-fixed-dim);
+  color: var(--on-primary-fixed);
+  box-shadow: 0 0 20px rgba(0, 227, 131, 0.3);
+}
+
+.ctaBtnPrimary:hover {
+  box-shadow: 0 0 30px rgba(0, 227, 131, 0.5);
+  transform: translateY(-1px);
+}
+
+.ctaBtnOutline {
+  background: transparent;
+  color: var(--on-surface);
+  border: 1px solid rgba(59, 75, 62, 0.5);
+}
+
+.ctaBtnOutline:hover {
+  border-color: var(--primary-fixed-dim);
+  color: var(--primary-fixed-dim);
+}

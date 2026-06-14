@@ -1,0 +1,394 @@
+.knowledgeLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: var(--background);
+}
+
+.mainContent {
+  flex: 1;
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 48px var(--spacing-gutter);
+  width: 100%;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(28, 33, 28, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 75, 62, 0.5);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  margin-bottom: 24px;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-fixed-dim);
+}
+
+.badgeText {
+  font-family: var(--font-label-sm);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.pageTitle {
+  font-family: var(--font-display-lg);
+  font-size: 36px;
+  color: var(--on-surface);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .pageTitle {
+    font-size: 48px;
+  }
+}
+
+.pageSubtitle {
+  font-family: var(--font-body-lg);
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 64px;
+}
+
+.sectionTitle {
+  font-family: var(--font-headline-lg);
+  font-size: 28px;
+  color: var(--on-surface);
+  margin-bottom: 8px;
+}
+
+.sectionDesc {
+  font-family: var(--font-body-md);
+  font-size: 15px;
+  color: var(--on-surface-variant);
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+/* Dataset Card */
+.datasetCard {
+  padding: 32px;
+  background: rgba(28, 33, 28, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.datasetHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.datasetIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 227, 131, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.datasetInfo {
+  flex: 1;
+}
+
+.datasetName {
+  font-family: var(--font-headline-md);
+  font-size: 22px;
+  color: var(--on-surface);
+  margin-bottom: 4px;
+}
+
+.datasetSource {
+  font-family: var(--font-label-sm);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.datasetSource a {
+  color: var(--primary-fixed-dim);
+  text-decoration: underline;
+}
+
+.datasetSource a:hover {
+  color: var(--primary-container);
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statCard {
+  padding: 20px;
+  background: rgba(16, 21, 16, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 75, 62, 0.2);
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-headline-lg);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-fixed-dim);
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-family: var(--font-label-sm);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Architecture Section */
+.architectureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .architectureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.archCard {
+  padding: 28px;
+  background: rgba(28, 33, 28, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 16px;
+}
+
+.archCardTitle {
+  font-family: var(--font-headline-md);
+  font-size: 20px;
+  color: var(--on-surface);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.archList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.archListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(59, 75, 62, 0.15);
+  font-family: var(--font-body-md);
+  font-size: 14px;
+}
+
+.archListItem:last-child {
+  border-bottom: none;
+}
+
+.archLabel {
+  color: var(--on-surface-variant);
+}
+
+.archValue {
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+/* Pipeline Steps */
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .pipelineGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pipelineGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pipelineStep {
+  padding: 24px;
+  background: rgba(28, 33, 28, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.pipelineStep:hover {
+  border-color: rgba(0, 227, 131, 0.4);
+  transform: translateY(-2px);
+}
+
+.stepNumber {
+  font-family: var(--font-headline-lg);
+  font-size: 36px;
+  font-weight: 700;
+  color: rgba(0, 227, 131, 0.2);
+  margin-bottom: 12px;
+}
+
+.stepTitle {
+  font-family: var(--font-headline-md);
+  font-size: 16px;
+  color: var(--on-surface);
+  margin-bottom: 8px;
+}
+
+.stepDesc {
+  font-family: var(--font-body-md);
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+/* Disease Classes Table */
+.classesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .classesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .classesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.classItem {
+  padding: 16px;
+  background: rgba(28, 33, 28, 0.4);
+  border: 1px solid rgba(59, 75, 62, 0.2);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.classItem:hover {
+  border-color: rgba(0, 227, 131, 0.4);
+  background: rgba(0, 227, 131, 0.03);
+}
+
+.className {
+  font-family: var(--font-label-md);
+  font-size: 13px;
+  color: var(--on-surface);
+  margin-bottom: 4px;
+}
+
+.classCount {
+  font-family: var(--font-label-sm);
+  font-size: 11px;
+  color: var(--on-surface-variant);
+}
+
+/* Performance Metrics */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.metricCard {
+  padding: 20px;
+  background: rgba(28, 33, 28, 0.6);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.metricValue {
+  font-family: var(--font-headline-lg);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-fixed-dim);
+  margin-bottom: 4px;
+}
+
+.metricLabel {
+  font-family: var(--font-label-sm);
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricBar {
+  height: 4px;
+  background: rgba(59, 75, 62, 0.3);
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.metricBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-fixed-dim), var(--primary-container));
+  border-radius: 2px;
+}

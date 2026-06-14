@@ -1,0 +1,222 @@
+.featuresSection {
+  padding: 96px 0;
+  background-color: var(--surface-container-lowest);
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(132, 149, 134, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-gutter);
+}
+
+.title {
+  font-family: var(--font-headline-lg);
+  font-size: 32px;
+  color: var(--on-surface);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+.description {
+  font-family: var(--font-body-md);
+  color: var(--on-surface-variant);
+  font-size: 16px;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  grid-auto-rows: min-content;
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-gutter);
+}
+
+@media (min-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.bentoCard {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.bentoCard:hover {
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .colSpan8 { grid-column: span 8; }
+  .colSpan4 { grid-column: span 4; }
+  .colSpan6 { grid-column: span 6; }
+}
+
+.decorativeBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16rem;
+  height: 16rem;
+  background-color: rgba(0, 227, 131, 0.05);
+  border-radius: 50%;
+  filter: blur(48px);
+  transition: background-color 0.5s;
+}
+
+.bentoCard:hover .decorativeBg {
+  background-color: rgba(0, 227, 131, 0.1);
+}
+
+.contentZ10 {
+  position: relative;
+  z-index: 10;
+}
+
+.cardTitle {
+  font-family: var(--font-headline-md);
+  font-size: 24px;
+  color: var(--on-surface);
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  font-family: var(--font-body-md);
+  color: var(--on-surface-variant);
+  max-width: 32rem;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+
+/* Neural Network Visual */
+.neuralNetVisual {
+  height: 128px;
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.bentoCard:hover .neuralNetVisual {
+  opacity: 1;
+}
+
+.barContainer {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.barContainer2 {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.bar1, .bar2, .bar3, .bar4, .bar5, .bar6 {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(to top, var(--primary-fixed-dim), rgba(0, 227, 131, 0.2));
+}
+
+.bar1 { height: 40%; }
+.bar2 { height: 70%; }
+.bar3 { height: 55%; }
+.bar4 { height: 85%; }
+.bar5 { height: 45%; }
+.bar6 { height: 65%; }
+
+/* Molecule Visual */
+.moleculeVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  position: relative;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.bentoCard:hover .moleculeVisual {
+  opacity: 1;
+}
+
+.moleculeNode {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-fixed-dim);
+  position: relative;
+}
+
+.moleculeNodeLg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 227, 131, 0.2);
+  border: 2px solid var(--primary-fixed-dim);
+  margin: 0 16px;
+}
+
+.moleculeConnect {
+  width: 24px;
+  height: 2px;
+  background-color: rgba(0, 227, 131, 0.3);
+}
+
+/* Grid Visual */
+.gridVisual {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.bentoCard:hover .gridVisual {
+  opacity: 1;
+}
+
+.gridCell {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background-color: rgba(0, 227, 131, 0.1);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  transition: all 0.3s;
+}
+
+.gridCellActive {
+  background-color: rgba(0, 227, 131, 0.3);
+  border-color: var(--primary-fixed-dim);
+}

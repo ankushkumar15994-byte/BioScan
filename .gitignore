@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Machine Learning models & datasets (if large)
+*.h5
+*.keras
+*.pt
+datasets/
+dataset/
+models/
+
+# Kaggle credentials
+kaggle.json

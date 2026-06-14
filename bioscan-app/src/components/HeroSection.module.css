@@ -1,0 +1,230 @@
+.heroSection {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 80px;
+  background: radial-gradient(ellipse at 30% 50%, rgba(0, 227, 131, 0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(76, 214, 255, 0.04) 0%, transparent 50%);
+}
+
+.overlayGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(16, 21, 16, 0.5), transparent, var(--background));
+  z-index: 10;
+  pointer-events: none;
+}
+
+.contentGrid {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: var(--spacing-container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-gutter);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-gutter);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .contentGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .textContent {
+    grid-column: span 7;
+  }
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(28, 33, 28, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 75, 62, 0.5);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  width: fit-content;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-fixed-dim);
+}
+
+.statusText {
+  font-family: var(--font-label-sm);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-family: var(--font-display-lg);
+  font-size: 40px;
+  line-height: 1.1;
+  color: var(--on-surface);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 64px;
+  }
+}
+
+.description {
+  font-family: var(--font-body-lg);
+  font-size: 18px;
+  color: var(--on-surface-variant);
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .actionButtons {
+    flex-direction: row;
+  }
+}
+
+.scanBtn {
+  gap: 8px;
+}
+
+.uploadDropdown {
+  position: relative;
+}
+
+.uploadBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-label-md);
+  font-size: 14px;
+  color: var(--on-surface);
+  background: rgba(28, 33, 28, 0.6);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.uploadBtn:hover {
+  background: rgba(38, 43, 39, 0.8);
+  border-color: var(--primary-fixed-dim);
+}
+
+.docBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-label-md);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  background: rgba(28, 33, 28, 0.6);
+  border: 1px solid rgba(59, 75, 62, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.docBtn:hover {
+  color: var(--on-surface);
+  border-color: rgba(59, 75, 62, 0.6);
+}
+
+/* Stats Panel */
+.statsPanel {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .statsPanel {
+    display: flex;
+    grid-column: span 5;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.statsCard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statsHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statsTitle {
+  font-family: var(--font-label-md);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-headline-lg);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-fixed-dim);
+}
+
+.statLabel {
+  font-family: var(--font-label-sm);
+  font-size: 12px;
+  color: var(--on-surface-variant);
+}
+
+.confidenceBar {
+  height: 6px;
+  background-color: rgba(59, 75, 62, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confidenceFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-fixed-dim), var(--primary-container));
+  border-radius: 3px;
+  transition: width 1s ease;
+}
