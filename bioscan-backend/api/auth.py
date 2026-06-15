@@ -204,28 +204,26 @@ def update_profile(profile_data: UserProfileUpdate, current_user: dict = Depends
     )
     return {"success": True, "name": profile_data.name, "occupation": profile_data.occupation}
 
+import base64
+
 @router.post("/avatar")
 async def upload_avatar(file: UploadFile = File(...), current_user: dict = Depends(get_current_user)):
     if users_collection is None:
         raise HTTPException(status_code=500, detail="Database not configured")
         
-    # Ensure avatars dir exists
-    os.makedirs("avatars", exist_ok=True)
+    content = await file.read()
     
-    # Save file securely
-    file_ext = os.path.splitext(file.filename)[1]
-    safe_filename = f"{current_user['_id']}{file_ext}"
-    file_path = os.path.join("avatars", safe_filename)
-    
-    with open(file_path, "wb") as f:
-        content = await file.read()
-        f.write(content)
+    # Limit file size to ~5MB to avoid blowing up the MongoDB document size
+    if len(content) > 5 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="Image file is too large. Maximum size is 5MB.")
         
-    avatar_url = f"http://localhost:8000/avatars/{safe_filename}"
+    base64_encoded = base64.b64encode(content).decode("utf-8")
+    mime_type = file.content_type or "image/jpeg"
+    avatar_data_url = f"data:{mime_type};base64,{base64_encoded}"
     
     users_collection.update_one(
         {"email": current_user["email"]},
-        {"$set": {"avatar_url": avatar_url}}
+        {"$set": {"avatar_url": avatar_data_url}}
     )
     
-    return {"success": True, "avatar_url": avatar_url}
+    return {"success": True, "avatar_url": avatar_data_url}
